@@ -1,0 +1,21 @@
+name: My First GitHub Action
+
+on: 
+ 
+ push: 
+ workflow_dispatch:
+
+jobs:
+
+  learn:
+    runs - on: ubuntu-latest
+
+    steps:
+      - name: Display a message
+        run: echo "Hello! I am learning GitHub Actions."
+
+      - name: Display the current date
+        run: date
+
+      - name: Check Python version
+        run: python --version
