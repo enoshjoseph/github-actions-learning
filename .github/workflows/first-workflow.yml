@@ -63,10 +63,11 @@ jobs:
           path: test-results.xml
           if-no-files-found: ignore
 
-  build:
+    build:
     name: Build stage
     needs: test
     runs-on: ubuntu-latest
+    environment: production
 
     env:
       BUILD_STAGE: validation
