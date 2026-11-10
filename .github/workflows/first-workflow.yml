@@ -1,6 +1,9 @@
 
 name: My First GitHub Action
 
+env:
+  APP_NAME: GitHubActionsLearning
+
 on:
   push:
     paths:
@@ -18,6 +21,9 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Display application name
+        run: echo "Application: $APP_NAME"
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -34,6 +40,9 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
 
+    env:
+      BUILD_STAGE: validation
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -43,3 +52,8 @@ jobs:
 
       - name: Check Python syntax
         run: python -m compileall -q .
+
+      - name: Display build information
+        run: |
+          echo "Application: $APP_NAME"
+          echo "Build stage: $BUILD_STAGE"
