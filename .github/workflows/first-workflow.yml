@@ -1,5 +1,7 @@
 
 name: My First GitHub Action
+permissions:
+  contents: read
 
 on:
   push:
