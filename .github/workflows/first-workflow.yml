@@ -86,5 +86,5 @@ jobs:
         run: |
           echo "Application: $APP_NAME"
           echo "Build stage: $BUILD_STAGE"
-    reusable-tests:
-      uses: ./.github/workflows/reusable-tests.yml
+  reusable-tests:
+    uses: ./.github/workflows/reusable-tests.yml
