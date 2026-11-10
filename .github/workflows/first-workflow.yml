@@ -1,9 +1,6 @@
 
 name: My First GitHub Action
 
-env:
-  APP_NAME: GitHubActionsLearning
-
 on:
   push:
     paths:
@@ -11,6 +8,9 @@ on:
       - 'test_math.py'
       - '.github/workflows/first-workflow.yml'
   workflow_dispatch:
+
+env:
+  APP_NAME: GitHubActionsLearning
 
 jobs:
   test:
