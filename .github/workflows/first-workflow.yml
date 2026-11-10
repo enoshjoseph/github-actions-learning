@@ -101,3 +101,17 @@ jobs:
 
   reusable-tests:
     uses: ./.github/workflows/reusable-tests.yml
+
+
+  deploy:
+    name: Simulated deployment
+    needs: build
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Simulate deployment
+        run: |
+          echo "Starting deployment..."
+          echo "Application: $APP_NAME"
+          echo "Deployment completed successfully!"
