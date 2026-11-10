@@ -20,7 +20,12 @@ on:
       - '.github/workflows/reusable-tests.yml'
       - '.github/actions/welcome/action.yml'
 
+  
+
   workflow_dispatch:
+
+  schedule:
+    - cron: '0 0 * * *'
 
 env:
   APP_NAME: GitHubActionsLearning
