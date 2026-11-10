@@ -1,0 +1,16 @@
+
+name: Welcome Action
+description: Displays a welcome message for the application
+
+inputs:
+  app-name:
+    description: Name of the application
+    required: true
+    default: GitHubActionsLearning
+
+runs:
+  using: composite
+  steps:
+    - name: Display welcome message
+      shell: bash
+      run: echo "Welcome to ${{ inputs.app-name }}!"

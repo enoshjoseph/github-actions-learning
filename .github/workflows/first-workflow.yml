@@ -75,6 +75,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Run my custom welcome action
+        uses: ./.github/actions/welcome
+        with:
+          app-name: ${{ env.APP_NAME }}
+
       - name: Display build message
         if: success()
         run: echo "Tests passed! The build stage can start."
