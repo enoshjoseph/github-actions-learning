@@ -10,7 +10,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  learn:
+  test:
+    name: Run Python tests
     runs-on: ubuntu-latest
 
     steps:
@@ -27,3 +28,17 @@ jobs:
 
       - name: Run automated tests
         run: python -m pytest -v
+
+  info:
+    name: Display runner information
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Display a message
+        run: echo "Hello from the info job!"
+
+      - name: Display operating system
+        run: uname -a
+
+      - name: Display current directory
+        run: pwd
