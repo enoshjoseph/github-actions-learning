@@ -3,6 +3,10 @@ name: My First GitHub Action
 
 on:
   push:
+    paths:
+      - 'hello.py'
+      - 'test_math.py'
+      - '.github/workflows/first-workflow.yml'
   workflow_dispatch:
 
 jobs:
