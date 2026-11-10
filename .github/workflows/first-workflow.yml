@@ -35,6 +35,19 @@ jobs:
       - name: Run automated tests
         run: python -m pytest -v
 
+
+      - name: Use a GitHub Secret
+        env:
+          DEMO_SECRET: ${{ secrets.DEMO_SECRET }}
+        run: |
+          if [ -n "$DEMO_SECRET" ]; then
+            echo "Secret is available!"
+          else
+            echo "Secret is missing!"
+            exit 1
+          fi
+
+
   build:
     name: Build stage
     needs: test
