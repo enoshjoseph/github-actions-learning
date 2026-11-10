@@ -8,12 +8,16 @@ on:
 jobs:
   learn:
     runs-on: ubuntu-latest
-    steps:
-      - name: Display a message
-        run: echo "Hello! I am learning GitHub Actions."
 
-      - name: Display the current date
-        run: date
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Display a message
+        run: echo "Repository code is available!"
+
+      - name: List repository files
+        run: ls -la
 
       - name: Check Python version
         run: python --version
