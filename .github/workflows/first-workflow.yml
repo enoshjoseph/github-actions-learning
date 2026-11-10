@@ -13,11 +13,5 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Display a message
-        run: echo "Repository code is available!"
-
-      - name: List repository files
-        run: ls -la
-
       - name: Check Python version
-        run: python --version
+        run: python hello.py
